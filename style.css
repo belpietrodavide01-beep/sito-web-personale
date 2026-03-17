@@ -55,7 +55,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     width: 100%;
 }
 
@@ -77,7 +77,7 @@ body {
     color: var(--white);
     font-family: var(--font);
     line-height: 1.65;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     width: 100%;
     position: relative;
     -webkit-font-smoothing: antialiased;
@@ -122,12 +122,14 @@ button {
 
 /* Square grid lines — visible across the entire page */
 .global-grid {
-    position: absolute;
+    position: fixed;
+    /* Changed from absolute to fixed for total stability */
     inset: 0;
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 55px 55px;
+    pointer-events: none;
 }
 
 /* Wide, soft purple wave/glow at the top — tuned to reference image */
@@ -223,7 +225,6 @@ button {
 /* Progressive blur — JS writes inline filter/opacity on each section */
 .section-blur {
     transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
-    will-change: transform, opacity;
 }
 
 @media (max-width: 768px) {
@@ -2416,7 +2417,7 @@ button {
     .testimonials,
     .cta-section,
     .footer {
-        background-color: transparent !important;
+        background: transparent !important;
     }
 
     /* Navbar Symmetry Fix */
