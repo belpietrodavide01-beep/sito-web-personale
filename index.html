@@ -540,8 +540,9 @@
                 <p class="cta-desc">Il tuo brand merita più di un sito mediocre. Parliamo di come possiamo portarlo al
                     livello successivo.</p>
                 <div class="cta-form-wrapper">
-                    <form action="https://formsubmit.co/Belpietrodigital@gmail.com" method="POST" class="cta-form">
-                        <!-- Redirige l'utente dopo l'invio -->
+                    <form action="https://formsubmit.co/Belpietrodigital@gmail.com" method="POST" class="cta-form"
+                        id="contactForm">
+                        <!-- Redirige l'utente dopo l'invio (Fallback) -->
                         <input type="hidden" name="_next"
                             value="https://belpietrodavide01-beep.github.io/sito-web-personale/">
                         <!-- Disabilita la pagina intermedia del CAPTCHA per uno scorrimento più fluido -->
@@ -565,8 +566,17 @@
                             <textarea id="message" name="message" placeholder="Raccontami del tuo progetto..." rows="4"
                                 required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary btn-large btn-submit">Invia Richiesta</button>
+                        <button type="submit" class="btn-primary btn-large btn-submit" id="contactSubmitBtn">Invia
+                            Richiesta</button>
                     </form>
+
+                    <!-- Messaggio di Successo (Nascosto di default) -->
+                    <div id="contactSuccess" class="cta-success-message" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3>Messaggio Inviato!</h3>
+                        <p>Grazie per avermi contattato. Ti risponderò il prima possibile, solitamente entro 24 ore.</p>
+                        <button class="btn-outline-sm" onclick="location.reload()">Invia un altro messaggio</button>
+                    </div>
                 </div>
                 <div class="cta-clients">
                     <div class="client-avatars">
