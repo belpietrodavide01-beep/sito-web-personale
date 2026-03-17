@@ -2697,87 +2697,41 @@ button {
         font-size: clamp(1.8rem, 7vw, 2.8rem);
     }
 
-    /* Excellence - Redesign for absolute stability */
-    .excellence {
-        padding: 50px 0;
-        overflow: visible !important;
-        touch-action: pan-y !important;
-        /* Critical: prioritize native vertical scroll */
-        position: relative;
+    /* Restore global background & grid for mobile */
+    .global-bg,
+    .global-grid,
+    .global-glow {
+        display: block !important;
+        pointer-events: none !important;
+        z-index: -10;
+        opacity: 1;
+        /* Restore original visibility */
     }
 
-    /* Hide ALL glows on mobile for clean look and maximum performance */
-    .global-glow,
+    /* Excellence - Text Only for Mobile flow */
+    .excellence {
+        padding: 60px 0 0 0;
+        /* Direct flow to portfolio */
+        overflow: visible !important;
+        touch-action: pan-y !important;
+    }
+
+    /* Completely disable localized Excellence glows to avoid interference */
     .excellence-bg,
     .exc-glow-1,
     .exc-glow-2 {
         display: none !important;
-        pointer-events: none !important;
-    }
-
-    /* Keep ONLY the grid lines */
-    .global-grid {
-        display: block !important;
-        pointer-events: none !important;
-        z-index: -10;
-        opacity: 0.3;
     }
 
     .excellence-inner {
         padding: 0 16px;
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        position: relative;
-        z-index: 1;
-        touch-action: pan-y !important;
-    }
-
-    .excellence-cards {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        /* Cards side-by-side */
-        gap: 10px;
-        position: static;
-        margin-top: 5px;
-        touch-action: pan-y !important;
-    }
-
-    .exc-card {
-        min-height: 120px;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        touch-action: pan-y !important;
-    }
-
-    .exc-card-label {
-        font-size: 0.7rem;
-        margin-bottom: 4px;
-    }
-
-    .exc-card-sub {
-        font-size: 0.75rem;
-    }
-
-    .exc-card-large,
-    .exc-card-small {
-        position: static !important;
-        margin-top: 0 !important;
-        width: 100% !important;
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .excellence-features {
         gap: 20px;
-        padding-bottom: 0;
-    }
-
-    .exc-feature strong {
-        font-size: 0.9rem;
-    }
-
-    .exc-feature p {
-        font-size: 0.8rem;
+        padding-bottom: 0px;
     }
 
     /* Portfolio */
