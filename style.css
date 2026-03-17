@@ -2711,13 +2711,34 @@ button {
         pointer-events: none !important;
     }
 
+    /* Restore grids and glows with touch-transparency and deep z-indexing */
+    .global-bg,
+    .global-grid,
+    .global-glow,
+    .excellence-bg {
+        display: block !important;
+        pointer-events: none !important;
+        user-select: none;
+        z-index: -1;
+    }
+
+    .excellence {
+        padding: 100px 0;
+        overflow: visible;
+        /* Ensure no scroll entrapment */
+    }
+
     .excellence-inner {
         padding: 0 20px;
+        position: relative;
+        z-index: 1;
+        /* Keep content above background */
     }
 
     .excellence-cards {
         gap: 20px;
         position: static;
+        margin-top: 40px;
     }
 
     .exc-card-large,
