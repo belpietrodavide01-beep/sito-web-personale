@@ -2808,65 +2808,87 @@ button {
         display: none;
     }
 
-    /* Footer - Restore Multi-column Layout */
+    /* Footer - Redesign for UX/UI Excellence (Tablet/Mobile) */
     .footer {
-        padding: 48px 0 0;
+        padding: 60px 0 0;
     }
 
     .footer-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        /* Force 4 columns for iPad */
-        gap: 30px;
-        padding-bottom: 40px;
+        grid-template-columns: 1fr 1fr;
+        /* Solid 2nd column grid */
+        gap: 40px 20px;
+        padding-bottom: 50px;
+        text-align: left;
     }
 
     .footer-col {
         width: 100%;
+        margin: 0;
+    }
+
+    .footer-newsletter-col {
+        grid-column: span 2;
+        /* Newsletter takes full width for balance */
+        margin-top: 10px;
     }
 
     .footer-nav a,
     .footer-contact a,
     .footer-contact span,
     .newsletter-desc {
-        font-size: 0.75rem;
-        /* Slightly smaller for iPad fit */
+        font-size: 0.85rem;
     }
 
     .footer-nav-label {
-        font-size: 0.6rem;
+        font-size: 0.65rem;
+        margin-bottom: 18px;
     }
 
     .footer-bottom {
-        flex-direction: row;
-        /* Keep horizontal on iPad */
+        display: flex;
+        flex-direction: column !important;
         align-items: center;
-        justify-content: space-between;
-        padding: 24px 0;
+        text-align: center;
+        gap: 30px;
+        padding: 40px 0;
+        position: relative;
     }
 
     .footer-brand-huge {
-        display: none !important;
-        /* Force hide large logo on mobile */
+        display: block !important;
+        position: relative;
+        opacity: 0.05;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        pointer-events: none;
     }
 
     .footer-brand-huge svg {
-        display: none;
+        display: block !important;
+        width: 100%;
+        height: auto;
     }
 
     .footer-meta {
+        display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
-        gap: 16px;
+        justify-content: center;
+        width: 100%;
+        gap: 24px;
+        position: relative;
+        z-index: 5;
     }
 
     .newsletter-form {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
         gap: 10px;
     }
 
     .newsletter-form button {
-        width: 100%;
+        width: auto;
     }
 }
 
@@ -2911,34 +2933,28 @@ button {
         padding: 36px 16px;
     }
 
-    /* Footer - Structured Grid for Small Mobile */
+    /* Footer - Compact for Small Mobile */
     .footer-grid {
         grid-template-columns: 1fr 1fr;
-        /* 2x2 layout */
-        gap: 20px;
+        gap: 30px 15px;
     }
 
     .footer-newsletter-col {
         grid-column: span 2;
-        /* Newsletter stays visible across both columns at bottom */
-        margin-top: 10px;
     }
 
     .newsletter-form {
-        flex-direction: row;
-        /* Try to keep button side-by-side if possible */
-        gap: 8px;
+        flex-direction: column;
+        gap: 12px;
     }
 
     .newsletter-form button {
-        width: auto;
-        padding: 10px 15px;
+        width: 100%;
+        padding: 14px;
     }
 
     .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+        gap: 20px;
     }
 }
 
