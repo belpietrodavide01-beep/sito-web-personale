@@ -2704,6 +2704,11 @@ button {
         position: static;
     }
 
+    /* Disable heavy glows on mobile to fix scroll lock/lag */
+    .excellence-bg {
+        display: none !important;
+    }
+
     .exc-card-large,
     .exc-card-small {
         position: static !important;

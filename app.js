@@ -121,11 +121,11 @@
             if (exitProgress > 0) {
                 opacity = 1 - exitProgress * 0.4;
                 scale = 1 - (exitProgress * 0.05 * mobileFactor);
-                translateY = -exitProgress * (40 * mobileFactor);
+                translateY = isMobile ? 0 : -exitProgress * (40 * mobileFactor);
             } else {
                 opacity = 0.6 + enterProgress * 0.4;
                 scale = (1 - (0.08 * mobileFactor)) + (enterProgress * 0.08 * mobileFactor);
-                translateY = (60 * mobileFactor) * (1 - enterProgress);
+                translateY = isMobile ? 0 : (60 * mobileFactor) * (1 - enterProgress);
             }
 
             sec.style.opacity = opacity.toFixed(2);
