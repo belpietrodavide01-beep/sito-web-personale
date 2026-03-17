@@ -2722,38 +2722,66 @@ button {
         z-index: -1;
     }
 
+    /* Excellence - Absolute Stability & Layout Reset */
     .excellence {
-        padding: 100px 0;
+        padding: 60px 0;
         overflow: visible;
-        /* Ensure no scroll entrapment */
+        touch-action: pan-y;
+        /* Force native vertical scroll */
+    }
+
+    .excellence-bg {
+        display: none !important;
+        /* Remove "too purple" glows on mobile */
     }
 
     .excellence-inner {
-        padding: 0 20px;
-        position: relative;
-        z-index: 1;
-        /* Keep content above background */
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
     }
 
     .excellence-cards {
-        gap: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* Align cards side-by-side */
+        gap: 12px;
         position: static;
-        margin-top: 40px;
+        margin-top: 0;
+    }
+
+    .exc-card {
+        min-height: 140px;
+        padding: 16px;
+    }
+
+    .exc-card-label {
+        font-size: 0.75rem;
+    }
+
+    .exc-card-sub {
+        font-size: 0.8rem;
     }
 
     .exc-card-large,
     .exc-card-small {
         position: static !important;
         margin-top: 0 !important;
+        width: 100%;
     }
 
     .excellence-features {
-        gap: 32px;
+        gap: 24px;
         padding-bottom: 0;
     }
 
-    .exc-card {
-        min-height: 180px;
+    .exc-feature strong {
+        font-size: 0.95rem;
+    }
+
+    .exc-feature p {
+        font-size: 0.85rem;
     }
 
     /* Portfolio */
