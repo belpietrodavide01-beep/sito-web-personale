@@ -1283,6 +1283,8 @@ button {
 .works {
     padding: 140px 0;
     position: relative;
+    overflow: visible;
+    /* Prevents ghost scrollbars on some devices */
 }
 
 
@@ -2749,87 +2751,52 @@ button {
             display: none;
         }
 
-        /* Footer - Redesign for UX/UI Excellence (Tablet/Mobile) */
+        /* Footer - Restored to previous style preferred by user */
         .footer {
-            padding: 60px 0 0;
+            padding: 48px 0 0;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            /* Solid 2nd column grid */
-            gap: 40px 20px;
-            padding-bottom: 50px;
-            text-align: left;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 columns for iPad */
+            gap: 30px;
+            padding-bottom: 40px;
         }
 
         .footer-col {
             width: 100%;
-            margin: 0;
-        }
-
-        .footer-newsletter-col {
-            grid-column: span 2;
-            /* Newsletter takes full width for balance */
-            margin-top: 10px;
         }
 
         .footer-nav a,
         .footer-contact a,
         .footer-contact span,
         .newsletter-desc {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
         }
 
         .footer-nav-label {
-            font-size: 0.65rem;
-            margin-bottom: 18px;
+            font-size: 0.6rem;
         }
 
         .footer-bottom {
-            display: flex;
-            flex-direction: column !important;
+            flex-direction: row;
             align-items: center;
-            text-align: center;
-            gap: 30px;
-            padding: 40px 0;
-            position: relative;
+            justify-content: space-between;
+            padding: 24px 0;
         }
 
         .footer-brand-huge {
-            display: block !important;
-            position: relative;
-            opacity: 0.05;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            pointer-events: none;
-        }
-
-        .footer-brand-huge svg {
-            display: block !important;
-            width: 100%;
-            height: auto;
-        }
-
-        .footer-meta {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            width: 100%;
-            gap: 24px;
-            position: relative;
-            z-index: 5;
+            display: none !important;
         }
 
         .newsletter-form {
-            display: flex;
-            flex-direction: row;
+            flex-direction: column;
             gap: 10px;
         }
 
         .newsletter-form button {
-            width: auto;
+            width: 100%;
         }
     }
 
@@ -2877,25 +2844,28 @@ button {
         /* Footer - Compact for Small Mobile */
         .footer-grid {
             grid-template-columns: 1fr 1fr;
-            gap: 30px 15px;
+            gap: 20px;
         }
 
         .footer-newsletter-col {
             grid-column: span 2;
+            margin-top: 10px;
         }
 
         .newsletter-form {
-            flex-direction: column;
-            gap: 12px;
+            flex-direction: row;
+            gap: 8px;
         }
 
         .newsletter-form button {
-            width: 100%;
-            padding: 14px;
+            width: auto;
+            padding: 10px 15px;
         }
 
         .footer-bottom {
-            gap: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
         }
     }
 
@@ -2916,3 +2886,5 @@ button {
             transform: none;
         }
     }
+}
+}
