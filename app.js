@@ -115,14 +115,17 @@
             let scale;
             let translateY;
 
+            const isMobile = window.innerWidth <= 768;
+            const mobileFactor = isMobile ? 0.3 : 1.0; // Reduce movement on mobile
+
             if (exitProgress > 0) {
                 opacity = 1 - exitProgress * 0.4;
-                scale = 1 - exitProgress * 0.05;
-                translateY = -exitProgress * 40;
+                scale = 1 - (exitProgress * 0.05 * mobileFactor);
+                translateY = -exitProgress * (40 * mobileFactor);
             } else {
                 opacity = 0.6 + enterProgress * 0.4;
-                scale = 0.92 + enterProgress * 0.08;
-                translateY = 60 * (1 - enterProgress);
+                scale = (1 - (0.08 * mobileFactor)) + (enterProgress * 0.08 * mobileFactor);
+                translateY = (60 * mobileFactor) * (1 - enterProgress);
             }
 
             sec.style.opacity = opacity.toFixed(2);
@@ -340,6 +343,53 @@
     document.addEventListener('mousemove', (e) => {
         glow.style.left = e.clientX + 'px';
         glow.style.top = e.clientY + 'px';
+    });
+})();
+
+// ─── CONTACT FORM (AJAX) ─────────────────────────────────
+(() => {
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('contactSuccess');
+    if (!form || !successMsg) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+
+        // UI Feedback
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Invio in corso...';
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Successo: Nascondi il form e mostra il ringraziamento
+                form.style.display = 'none';
+                successMsg.style.display = 'flex';
+                // Trigger reflow for animation
+                void successMsg.offsetWidth;
+                successMsg.style.opacity = '1';
+                successMsg.style.transform = 'translateY(0)';
+            } else {
+                throw new Error('Errore durante l\'invio');
+            }
+        } catch (error) {
+            console.error('Form Error:', error);
+            alert('Ops! Si è verificato un errore. Prova a ricaricare la pagina o scrivi direttamente a Belpietrodigital@gmail.com');
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+        }
     });
 })();
 

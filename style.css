@@ -224,8 +224,7 @@ button {
 .section-blur {
     transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
     will-change: transform, opacity;
-    contain: paint;
-    /* Isolate painting for better performance */
+    /* Removed contain: paint; to prevent clipping on mobile scroll */
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -1861,60 +1860,60 @@ button {
     flex: 1;
 }
 
+/* Success Message Styles */
+.cta-success-message {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    animation: fadeInSuccess 0.5s ease forwards;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--purple);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 24px;
+    box-shadow: 0 0 30px rgba(176, 38, 255, 0.4);
+}
+
+.cta-success-message h3 {
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.cta-success-message p {
+    color: var(--gray);
+    margin-bottom: 32px;
+    max-width: 400px;
+}
+
+@keyframes fadeInSuccess {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .form-group {
-
-    /* Success Message Styles */
-    .cta-success-message {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 60px 20px;
-        animation: fadeIn 0.5s ease forwards;
-    }
-
-    .success-icon {
-        width: 64px;
-        height: 64px;
-        background: var(--purple);
-        color: var(--white);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        margin-bottom: 24px;
-        box-shadow: 0 0 30px rgba(176, 38, 255, 0.4);
-    }
-
-    .cta-success-message h3 {
-        font-size: 1.8rem;
-        color: var(--white);
-        margin-bottom: 16px;
-    }
-
-    .cta-success-message p {
-        color: var(--gray);
-        margin-bottom: 32px;
-        max-width: 400px;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex: 1;
 }
 
 .form-group label {
@@ -2703,7 +2702,12 @@ button {
     .excellence-cards {
         gap: 20px;
         position: static;
-        /* Disable sticky on phones for better UX */
+    }
+
+    .exc-card-large,
+    .exc-card-small {
+        position: static !important;
+        margin-top: 0 !important;
     }
 
     .excellence-features {
