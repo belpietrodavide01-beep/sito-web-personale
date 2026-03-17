@@ -2188,19 +2188,26 @@ button {
         color: var(--purple);
     }
 
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        padding-bottom: 60px;
+    }
+
     .footer-nav-label {
         font-size: 0.65rem;
         font-weight: 700;
         letter-spacing: 0.2em;
-        color: var(--gray);
+        color: var(--gray-dim);
         text-transform: uppercase;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
     }
 
     .footer-nav {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
     }
 
     .footer-nav a {
@@ -2222,46 +2229,40 @@ button {
 
     .newsletter-form {
         display: flex;
-        gap: 8px;
+        gap: 10px;
+        align-items: center;
     }
 
     .newsletter-form input {
         flex: 1;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 8px;
-        padding: 12px 16px;
+        padding: 14px 16px;
         font-size: 0.85rem;
         color: var(--white);
-        font-family: var(--font);
         outline: none;
         transition: border-color 0.3s;
-        min-width: 0;
-    }
-
-    .newsletter-form input::placeholder {
-        color: var(--gray-dim);
-    }
-
-    .newsletter-form input:focus {
-        border-color: var(--purple);
     }
 
     .newsletter-form button {
-        background: var(--purple);
+        background: #a855f7;
+        /* Vibrant purple as per image */
         color: var(--white);
         border: none;
-        padding: 12px 20px;
+        padding: 14px 24px;
         border-radius: 8px;
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        transition: background 0.3s;
-        white-space: nowrap;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        transition: transform 0.3s, background 0.3s;
+        text-transform: uppercase;
     }
 
     .newsletter-form button:hover {
-        background: var(--purple-mid);
+        background: #9333ea;
+        transform: translateY(-2px);
     }
 
     .footer-bottom {
@@ -2752,52 +2753,32 @@ button {
             display: none;
         }
 
-        /* Footer - Restored to previous style preferred by user */
+        /* Footer - Unified 4-column layout as per image reference */
         .footer {
-            padding: 48px 0 0;
+            padding: 80px 0 0;
         }
 
         .footer-grid {
-            display: grid;
             grid-template-columns: repeat(4, 1fr);
-            /* 4 columns for iPad */
-            gap: 30px;
-            padding-bottom: 40px;
+            gap: 40px;
+            padding-bottom: 60px;
         }
 
-        .footer-col {
-            width: 100%;
-        }
-
-        .footer-nav a,
-        .footer-contact a,
-        .footer-contact span,
-        .newsletter-desc {
-            font-size: 0.75rem;
-        }
-
-        .footer-nav-label {
-            font-size: 0.6rem;
+        .footer-newsletter-col {
+            grid-column: span 1;
+            /* Reset to 1 column */
         }
 
         .footer-bottom {
             flex-direction: row;
-            align-items: center;
             justify-content: space-between;
-            padding: 24px 0;
+            align-items: center;
+            padding: 40px 0;
         }
 
         .footer-brand-huge {
             display: none !important;
-        }
-
-        .newsletter-form {
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .newsletter-form button {
-            width: 100%;
+            /* Hide as per second reference image */
         }
     }
 
@@ -2842,31 +2823,32 @@ button {
             padding: 36px 16px;
         }
 
-        /* Footer - Compact for Small Mobile */
+        /* Footer - Compact but matching the 4-col grouping */
         .footer-grid {
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 40px 20px;
         }
 
         .footer-newsletter-col {
             grid-column: span 2;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .newsletter-form {
             flex-direction: row;
-            gap: 8px;
+            gap: 10px;
         }
 
         .newsletter-form button {
             width: auto;
-            padding: 10px 15px;
+            flex-shrink: 0;
         }
 
         .footer-bottom {
             flex-direction: column;
-            align-items: flex-start;
-            gap: 15px;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
         }
     }
 
@@ -2887,5 +2869,4 @@ button {
             transform: none;
         }
     }
-}
 }
