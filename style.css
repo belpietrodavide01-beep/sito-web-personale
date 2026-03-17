@@ -2403,8 +2403,9 @@ button {
         }
 
         .footer-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            /* Restored to 4 columns for iPad */
+            gap: 30px;
         }
 
         .works-grid {
