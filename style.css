@@ -900,15 +900,6 @@ button {
     position: relative;
 }
 
-.about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--border);
-}
 
 .about-grid {
     display: grid;
@@ -1023,15 +1014,6 @@ button {
     position: relative;
 }
 
-.services::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--border);
-}
 
 .services-header {
     display: flex;
@@ -1134,15 +1116,6 @@ button {
     /* overflow removed to allow sticky */
 }
 
-.excellence::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--border);
-}
 
 .excellence-bg {
     position: absolute;
@@ -1312,15 +1285,6 @@ button {
     position: relative;
 }
 
-.works::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--border);
-}
 
 .works-header {
     margin-bottom: 64px;
@@ -1492,15 +1456,6 @@ button {
     overflow: hidden;
 }
 
-.testimonials::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--border);
-}
 
 /* Full-bleed color wash that transitions per slide */
 .testi-slider-bg {
@@ -2188,7 +2143,6 @@ button {
 ═══════════════════════════════════════════════════════════ */
 .footer {
     padding: 80px 0 0;
-    border-top: 1px solid var(--border);
     background: var(--bg);
     /* Changed from var(--bg-2) to match left side symmetry */
 }
