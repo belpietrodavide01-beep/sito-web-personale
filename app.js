@@ -104,7 +104,16 @@
         }
 
         const vH = window.innerHeight;
+        const isMobile = window.innerWidth <= 768;
+
         visibleSections.forEach(sec => {
+            if (isMobile) {
+                // Nuclear Option for Mobile Stability: Disable all JS-driven scroll logic
+                sec.style.opacity = "1";
+                sec.style.transform = "none";
+                return;
+            }
+
             const r = sec.getBoundingClientRect();
             // Enter progress (0 to 1) as section comes from bottom
             const enterProgress = clamp((vH - r.top) / (vH * 0.5), 0, 1);
@@ -115,17 +124,16 @@
             let scale;
             let translateY;
 
-            const isMobile = window.innerWidth <= 768;
-            const mobileFactor = isMobile ? 0.3 : 1.0; // Reduce movement on mobile
+            const mobileFactor = 1.0; // No longer needed as we bail early, but kept for logic consistency if changed
 
             if (exitProgress > 0) {
                 opacity = 1 - exitProgress * 0.4;
-                scale = 1 - (exitProgress * 0.05 * mobileFactor);
-                translateY = isMobile ? 0 : -exitProgress * (40 * mobileFactor);
+                scale = 1 - (exitProgress * 0.05);
+                translateY = -exitProgress * 40;
             } else {
                 opacity = 0.6 + enterProgress * 0.4;
-                scale = (1 - (0.08 * mobileFactor)) + (enterProgress * 0.08 * mobileFactor);
-                translateY = isMobile ? 0 : (60 * mobileFactor) * (1 - enterProgress);
+                scale = 0.92 + enterProgress * 0.08;
+                translateY = 60 * (1 - enterProgress);
             }
 
             sec.style.opacity = opacity.toFixed(2);

@@ -224,7 +224,15 @@ button {
 .section-blur {
     transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
     will-change: transform, opacity;
-    /* Removed contain: paint; to prevent clipping on mobile scroll */
+}
+
+@media (max-width: 768px) {
+    .section-blur {
+        transition: none !important;
+        will-change: auto !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -2694,19 +2702,22 @@ button {
         padding: 80px 0;
     }
 
+    /* Disable heavy glows and prevent touch interference on mobile */
+    .excellence-bg,
+    .global-bg,
+    .global-grid,
+    .global-glow {
+        display: none !important;
+        pointer-events: none !important;
+    }
+
     .excellence-inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        padding: 0 20px;
     }
 
     .excellence-cards {
         gap: 20px;
         position: static;
-    }
-
-    /* Disable heavy glows on mobile to fix scroll lock/lag */
-    .excellence-bg {
-        display: none !important;
     }
 
     .exc-card-large,
