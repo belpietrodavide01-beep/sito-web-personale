@@ -274,7 +274,7 @@
 // ─── COUNTER ANIMATION ON STATS ─────────────────────────
 (() => {
     const stats = document.querySelectorAll('.stat-num');
-    const targets = [50, 3, 100];
+    const targets = [5, 3, 100];
     const suffix = ['+', 'x', '%'];
     const obs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
