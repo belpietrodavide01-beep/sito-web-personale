@@ -407,3 +407,41 @@ window.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => el.classList.add('visible'), 200 + i * 120);
     });
 });
+
+// ─── FAQ ACCORDION ────────────────────────────────────────
+(() => {
+    const items = document.querySelectorAll('.faq-item');
+    if (!items.length) return;
+
+    items.forEach(item => {
+        const btn = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        if (!btn || !answer) return;
+
+        btn.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+
+            // Close all other items
+            items.forEach(other => {
+                if (other !== item) {
+                    other.classList.remove('open');
+                    const otherBtn = other.querySelector('.faq-question');
+                    const otherAnswer = other.querySelector('.faq-answer');
+                    if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+                    if (otherAnswer) otherAnswer.classList.remove('open');
+                }
+            });
+
+            // Toggle current
+            if (isOpen) {
+                item.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+                answer.classList.remove('open');
+            } else {
+                item.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+                answer.classList.add('open');
+            }
+        });
+    });
+})();
