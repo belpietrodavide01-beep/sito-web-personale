@@ -369,7 +369,7 @@
             }
         } catch (error) {
             console.error('Form Error:', error);
-            alert('Ops! Si è verificato un errore. Prova a ricaricare la pagina o scrivi direttamente a Belpietrodigital@gmail.com');
+            alert('Ops! Si è verificato un errore. Prova a ricaricare la pagina o scrivi direttamente a info@bdigitalstudio.it');
             submitBtn.disabled = false;
             submitBtn.textContent = originalText;
         }
