@@ -179,26 +179,57 @@
     const hero = document.querySelector('.hero');
     const content = document.querySelector('.hero-content');
     if (!hero || !content) return;
-    hero.addEventListener('mousemove', (e) => {
-        const dx = (e.clientX - window.innerWidth / 2) / window.innerWidth;
-        const dy = (e.clientY - window.innerHeight / 2) / window.innerHeight;
-        content.style.transform = `translate(${dx * 6}px, ${dy * 4}px)`;
+
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let isMouseIn = false;
+    let animationFrameId = null;
+
+    const lerp = (start, end, factor) => start + (end - start) * factor;
+
+    const renderParallax = () => {
+        currentX = lerp(currentX, targetX, 0.1);
+        currentY = lerp(currentY, targetY, 0.1);
+
+        content.style.translate = `${currentX * 6}px ${currentY * 4}px`;
+        
         document.querySelectorAll('.cube').forEach((c, i) => {
             const d = 1 + i * 0.5;
-            c.style.transform = `translate(${dx * 14 * d}px, ${dy * 10 * d}px)`;
+            c.style.translate = `${currentX * 14 * d}px ${currentY * 10 * d}px`;
+            // Clear any old inline transforms so CSS frame animations work smoothly
+            c.style.transform = ''; 
         });
+        
         document.querySelectorAll('.shape').forEach((s, i) => {
             const d = 0.5 + i * 0.3;
-            s.style.marginLeft = `${dx * 20 * d}px`;
-            s.style.marginTop = `${dy * 12 * d}px`;
+            // hardware-accelerated translate instead of costly reflow margins!
+            s.style.translate = `${currentX * 20 * d}px ${currentY * 12 * d}px`;
+            s.style.marginLeft = ''; 
+            s.style.marginTop = '';
         });
+
+        // Continue running loop if still moving or not yet back to zero
+        if (isMouseIn || Math.abs(targetX - currentX) > 0.001) {
+            animationFrameId = requestAnimationFrame(renderParallax);
+        } else {
+            animationFrameId = null;
+        }
+    };
+
+    hero.addEventListener('mousemove', (e) => {
+        targetX = (e.clientX - window.innerWidth / 2) / window.innerWidth;
+        targetY = (e.clientY - window.innerHeight / 2) / window.innerHeight;
+        isMouseIn = true;
+        if (!animationFrameId) renderParallax();
     });
+    
     hero.addEventListener('mouseleave', () => {
-        content.style.transform = '';
-        document.querySelectorAll('.cube').forEach(c => c.style.transform = '');
-        document.querySelectorAll('.shape').forEach(s => {
-            s.style.marginLeft = ''; s.style.marginTop = '';
-        });
+        isMouseIn = false;
+        targetX = 0; 
+        targetY = 0;
+        if (!animationFrameId) renderParallax();
     });
 })();
 

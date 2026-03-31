@@ -244,6 +244,8 @@ button {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 40px;
+    position: relative;
+    z-index: 2;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -613,6 +615,7 @@ button {
     filter: blur(80px);
     opacity: 0.4;
     animation: floatShape 8s ease-in-out infinite;
+    will-change: transform;
 }
 
 .shape-1 {
@@ -682,6 +685,7 @@ button {
     position: absolute;
     transform-style: preserve-3d;
     animation: rotateCube 12s linear infinite;
+    will-change: transform;
 }
 
 .cube-1 {
@@ -1128,6 +1132,7 @@ button {
     border-radius: 50%;
     filter: blur(100px);
     opacity: 0.25;
+    will-change: transform, opacity;
 }
 
 .exc-glow-1 {
@@ -1257,6 +1262,7 @@ button {
     position: absolute;
     border-radius: 50%;
     filter: blur(40px);
+    will-change: transform, opacity;
 }
 
 .exc-visual-1 {
@@ -1634,14 +1640,7 @@ button {
     z-index: 1;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 2;
-    overflow-x: hidden;
-}
+/* NOTE: duplicate .container removed — see top of file */
 
 .testi-dot {
     width: 8px;
@@ -1666,9 +1665,8 @@ button {
 .cta-section {
     padding: 160px 0;
     position: relative;
-    overflow-x: hidden;
-    /* Prevent floating avatars from stretching viewport */
-    overflow-y: visible;
+    overflow: hidden;
+    /* Contain floating avatars so they don't push page horizontally */
 }
 
 /* Extra purple glow centered in CTA */
