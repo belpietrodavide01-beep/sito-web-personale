@@ -445,3 +445,53 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 })();
+
+// ─── ACTIVE NAV LINK ─────────────────────────────────────
+(() => {
+    const path = window.location.pathname;
+    const file = path.split('/').pop() || 'index.html';
+    const currentPage = file === '' ? 'index.html' : file;
+
+    document.querySelectorAll('.nav-links a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href === currentPage) {
+            a.classList.add('active');
+        }
+    });
+})();
+
+// ─── PORTFOLIO FILTERS (progetti.html) ───────────────────
+(() => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-full-card');
+    if (!filterBtns.length || !projectCards.length) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            projectCards.forEach(card => {
+                const categories = card.dataset.category || '';
+                if (filter === 'tutti' || categories.includes(filter)) {
+                    card.style.display = '';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(16px)';
+                    requestAnimationFrame(() => {
+                        card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    });
+                } else {
+                    card.style.transition = 'opacity 0.2s ease';
+                    card.style.opacity = '0';
+                    setTimeout(() => { card.style.display = 'none'; }, 200);
+                }
+            });
+        });
+    });
+})();
+
