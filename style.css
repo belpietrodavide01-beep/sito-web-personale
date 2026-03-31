@@ -3373,6 +3373,23 @@ button {
     display: block;
 }
 
+.value-icon-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(176, 38, 255, 0.12);
+    border: 1px solid rgba(176, 38, 255, 0.25);
+    color: var(--purple);
+    margin-bottom: 18px;
+}
+
+.value-icon-svg svg {
+    stroke: var(--purple);
+}
+
 .value-title {
     font-size: 1rem;
     font-weight: 800;

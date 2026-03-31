@@ -74,83 +74,27 @@
 })();
 
 // ─── PROGRESSIVE SCROLL BLUR ─────────────────────────────
+// Only a gentle opacity fade — no translateY/scale that blocks inner-page sections
 (() => {
     const sections = Array.from(document.querySelectorAll('.section-blur'));
     if (!sections.length) return;
 
-    const visibleSections = new Set();
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                visibleSections.add(entry.target);
-            } else {
-                visibleSections.delete(entry.target);
-                // Reset styles when out of view
-                entry.target.style.filter = 'none';
                 entry.target.style.opacity = '1';
-            }
-        });
-    }, { threshold: Array.from({ length: 21 }, (_, i) => i / 20), rootMargin: '100px 0px' });
-
-    sections.forEach(sec => observer.observe(sec));
-
-    let ticking = false;
-    function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
-
-    function update() {
-        if (visibleSections.size === 0) {
-            ticking = false;
-            return;
-        }
-
-        const vH = window.innerHeight;
-        const isMobile = window.innerWidth <= 768;
-
-        visibleSections.forEach(sec => {
-            if (isMobile) {
-                // Nuclear Option for Mobile Stability: Disable all JS-driven scroll logic
-                sec.style.opacity = "1";
-                sec.style.transform = "none";
-                return;
-            }
-
-            const r = sec.getBoundingClientRect();
-            // Enter progress (0 to 1) as section comes from bottom
-            const enterProgress = clamp((vH - r.top) / (vH * 0.5), 0, 1);
-            // Exit progress (0 to 1) as section goes to top
-            const exitProgress = r.bottom < vH * 0.4 ? clamp(1 - r.bottom / (vH * 0.4), 0, 1) : 0;
-
-            let opacity;
-            let scale;
-            let translateY;
-
-            const mobileFactor = 1.0; // No longer needed as we bail early, but kept for logic consistency if changed
-
-            if (exitProgress > 0) {
-                opacity = 1 - exitProgress * 0.4;
-                scale = 1 - (exitProgress * 0.05);
-                translateY = -exitProgress * 40;
+                entry.target.style.transform = 'none';
             } else {
-                opacity = 0.6 + enterProgress * 0.4;
-                scale = 0.92 + enterProgress * 0.08;
-                translateY = 60 * (1 - enterProgress);
+                entry.target.style.opacity = '';
+                entry.target.style.transform = '';
             }
-
-            sec.style.opacity = opacity.toFixed(2);
-            sec.style.transform = `scale(${scale.toFixed(3)}) translateY(${translateY.toFixed(1)}px)`;
         });
-        ticking = false;
-    }
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
 
-    window.addEventListener('scroll', () => {
-        if (!ticking && visibleSections.size > 0) {
-            requestAnimationFrame(update);
-            ticking = true;
-        }
-    }, { passive: true });
-
-    // Initial run
-    requestAnimationFrame(update);
+    sections.forEach(sec => {
+        sec.style.transition = 'opacity 0.5s ease';
+        observer.observe(sec);
+    });
 })();
 
 
