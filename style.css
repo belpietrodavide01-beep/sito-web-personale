@@ -2432,10 +2432,17 @@ button {
 .footer-bottom {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 32px 0;
-    flex-wrap: wrap;
-    gap: 20px;
+    position: relative;
+    border-top: 1px solid var(--border);
+}
+
+.footer-copyright {
+    font-size: 0.75rem;
+    color: var(--gray);
+    text-align: center;
+    letter-spacing: 0.02em;
 }
 
 .footer-brand-huge {
@@ -3849,13 +3856,13 @@ button {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 60px;
-    height: 60px;
+    width: 45px; /* Reduced from 60px */
+    height: 45px; /* Reduced from 60px */
     background-color: #25d366;
     color: #FFF;
     border-radius: 50%;
     text-align: center;
-    font-size: 30px;
+    font-size: 24px; /* Reduced from 30px */
     box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
     z-index: 1000;
     display: flex;
@@ -3865,8 +3872,8 @@ button {
 }
 
 .whatsapp-float svg {
-    width: 35px;
-    height: 35px;
+    width: 24px; /* Reduced from 35px */
+    height: 24px; /* Reduced from 35px */
     fill: currentColor;
 }
 
@@ -3881,11 +3888,11 @@ button {
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
-        width: 50px;
-        height: 50px;
+        width: 40px; /* Reduced from 50px */
+        height: 40px; /* Reduced from 50px */
     }
     .whatsapp-float svg {
-        width: 28px;
-        height: 28px;
+        width: 22px; /* Reduced from 28px */
+        height: 22px; /* Reduced from 28px */
     }
 }
