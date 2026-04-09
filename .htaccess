@@ -1,5 +1,9 @@
 RewriteEngine On
 
+# 0. Redirect root (/) e /index a /home
+RewriteRule ^$ /home [R=301,L]
+RewriteRule ^index(\.html)?$ /home [R=301,L]
+
 # 1. Se il link contiene .html, lo toglie automaticamente dalla barra del browser
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.*)\.html [NC]
 RewriteRule ^ /%1 [R=301,L]

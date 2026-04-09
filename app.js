@@ -424,12 +424,14 @@ window.addEventListener('DOMContentLoaded', () => {
 // ─── ACTIVE NAV LINK ─────────────────────────────────────
 (() => {
     const path = window.location.pathname;
-    const file = path.split('/').pop() || 'index.html';
-    const currentPage = file === '' ? 'index.html' : file;
+    const file = path.split('/').pop() || 'home';
+    const currentPage = (file === '' || file === '/') ? 'home' : file.replace('.html', '');
 
-    document.querySelectorAll('.nav-links a').forEach(a => {
+    document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
         const href = a.getAttribute('href');
-        if (href === currentPage) {
+        if (!href) return;
+        const linkPage = href.replace('.html', '');
+        if (linkPage === currentPage) {
             a.classList.add('active');
         }
     });

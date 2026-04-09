@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BDigital · Web Design & Digital Marketing</title>
+    <meta name="description"
+        content="Creo siti web veloci, bellissimi e campagne di marketing digitale che fanno crescere il tuo brand. Risultati concreti, non promesse." />
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo/logo.svg">
+
+    <!-- SEO & Social Sharing -->
+    <link rel="canonical" href="https://bdigitalstudio.it/home" />
+    <meta property="og:site_name" content="BDigital" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BDigital · Web Design & Digital Marketing" />
+    <meta property="og:description" content="Creo siti web veloci, bellissimi e campagne di marketing digitale che fanno crescere il tuo brand. Risultati concreti, non promesse." />
+    <meta property="og:url" content="https://bdigitalstudio.it/" />
+    <meta property="og:image" content="https://bdigitalstudio.it/assets/images/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BDigital · Web Design & Digital Marketing" />
+    <meta name="twitter:description" content="Creo siti web veloci, bellissimi e campagne di marketing digitale che fanno crescere il tuo brand. Risultati concreti, non promesse." />
+    <meta name="twitter:image" content="https://bdigitalstudio.it/assets/images/og-image.jpg" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "BDigital",
+      "image": "https://bdigitalstudio.it/assets/images/logo/logo.svg",
+      "@id": "https://bdigitalstudio.it",
+      "url": "https://bdigitalstudio.it",
+      "telephone": "+393272506011",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Brescia",
+        "postalCode": "",
+        "addressCountry": "IT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.5415,
+        "longitude": 10.2118
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/bdigitalstudio"
+      ]
+    }
+    </script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4K6QB8HDC2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4K6QB8HDC2');
+</script>
+
+
+
+<body>
+
+    <!-- ══════════════ GLOBAL BACKGROUND ══════════════ -->
+    <div class="global-bg" aria-hidden="true">
+        <div class="global-glow"></div>
+        <div class="global-vignette"></div>
+        <div class="global-grid"></div>
+    </div>
+
+    <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <a href="home">
+                <svg class="brand-logo" version="1.0" xmlns="http://www.w3.org/2000/svg" width="160" height="40"
+                    viewBox="0 0 691 361" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,361.000000) scale(0.100000,-0.100000)" fill="white" stroke="none">
+                        <path
+                            d="M3627 2690 c-207 -24 -429 -105 -606 -223 -70 -47 -87 -55 -103 -46 -31 17 -93 -15 -113 -57 -29 -61 9 -121 82 -131 56 -7 101 31 105 90 3 38 8 45 63 84 118 83 278 152 460 199 101 26 397 26 510 0 171 -39 315 -100 465 -196 65 -41 70 -46 70 -83 0 -94 131 -132 180 -53 24 40 26 74 4 104 -22 32 -79 54 -109 42 -21 -8 -36 -2 -97 39 -113 76 -243 140 -353 175 -154 49 -401 73 -558 56z" />
+                        <path
+                            d="M3545 2460 c-310 -67 -555 -243 -717 -515 -40 -67 -102 -228 -113 -291 -5 -34 -11 -42 -40 -53 -20 -7 -43 -26 -55 -46 l-22 -35 -277 0 c-153 0 -281 3 -284 7 -4 3 6 18 22 32 50 46 71 97 71 178 0 90 -23 147 -81 197 -77 65 -113 71 -457 71 l-303 0 -2 -510 -2 -510 345 0 c338 1 346 1 393 23 58 28 113 75 133 113 43 84 36 213 -16 287 l-30 42 245 0 245 0 33 -37 c30 -32 40 -37 83 -37 75 -1 124 44 124 115 0 36 -23 84 -45 92 -23 9 -18 56 16 154 43 121 78 187 150 283 140 186 349 319 583 371 124 27 434 27 451 -1 3 -4 -34 -17 -81 -29 -146 -37 -264 -112 -357 -227 -35 -45 -57 -64 -73 -64 -62 0 -114 -53 -114 -116 0 -73 97 -125 162 -87 55 32 67 78 43 158 -11 36 122 167 225 224 14 7 56 24 94 37 127 44 327 28 441 -35 29 -15 41 -24 116 -81 52 -40 159 -151 159 -166 0 -7 -4 -16 -10 -19 -21 -13 -11 -82 16 -114 76 -91 214 -41 214 77 0 32 -7 48 -35 77 -32 34 -38 37 -83 33 l-49 -3 -91 93 c-150 151 -317 246 -532 303 -115 31 -375 35 -495 9z m1213 -488 c18 -24 11 -52 -19 -75 -21 -15 -31 -17 -48 -8 -30 17 -43 45 -32 75 15 38 71 43 99 8z m-2852 -164 c28 -31 34 -45 34 -82 0 -60 -16 -92 -59 -119 -34 -21 -47 -22 -216 -22 l-180 0 -3 119 c-1 66 0 126 3 134 4 11 40 13 196 10 l191 -3 34 -37z m853 -284 c25 -32 26 -47 5 -68 -21 -21 -80 -21 -88 0 -17 45 5 94 44 94 10 0 28 -12 39 -26z m-848 -116 c74 -33 102 -131 56 -199 -41 -62 -68 -68 -289 -69 l-198 0 0 146 0 146 198 -4 c153 -3 205 -7 233 -20z" />
+                        <path
+                            d="M2310 1800 l0 -210 90 0 89 0 3 128 3 127 105 3 105 3 43 79 42 80 -240 0 -240 0 0 -210z" />
+                        <path d="M6280 1495 l0 -515 90 0 90 0 -2 513 -3 512 -87 3 -88 3 0 -516z" />
+                        <path
+                            d="M2964 1918 c-9 -17 -25 -47 -36 -66 l-19 -35 49 -46 c74 -70 106 -144 110 -258 8 -190 -71 -311 -230 -358 -42 -12 -90 -15 -199 -13 l-144 3 -3 123 -3 122 -89 0 -90 0 0 -205 0 -205 250 0 c270 0 322 6 415 50 125 60 204 143 251 266 24 61 27 84 28 189 0 167 -23 243 -112 353 -34 43 -126 112 -149 112 -7 0 -20 -14 -29 -32z" />
+                        <path
+                            d="M5027 1924 c-4 -4 -7 -49 -7 -100 l0 -93 -57 -3 -58 -3 -3 -67 c-3 -65 -2 -68 20 -69 13 -1 30 -2 38 -3 8 -2 25 -3 38 -4 l22 -2 0 -217 c0 -208 1 -220 24 -268 42 -89 115 -135 215 -135 51 0 141 26 153 44 9 13 4 35 -19 89 -12 28 -21 36 -32 31 -9 -3 -34 -8 -57 -11 -35 -5 -46 -1 -75 25 l-34 30 -3 206 -4 206 91 0 90 0 6 33 c4 18 5 51 3 72 l-3 40 -90 5 -90 5 -5 95 -5 95 -75 3 c-42 1 -79 0 -83 -4z" />
+                        <path
+                            d="M3975 1731 c-89 -16 -193 -94 -233 -175 -80 -159 -52 -359 66 -467 72 -67 141 -93 242 -93 96 0 156 21 208 74 16 16 32 26 36 23 11 -11 6 -89 -9 -140 -19 -63 -46 -98 -98 -126 -84 -44 -255 -22 -350 45 -29 21 -30 21 -44 2 -8 -10 -23 -36 -34 -56 -25 -49 -15 -66 61 -101 177 -84 412 -71 528 29 109 93 123 167 120 629 l-3 350 -82 3 -83 3 0 -51 c0 -27 -4 -50 -8 -50 -5 0 -19 12 -33 26 -57 61 -181 94 -284 75z m203 -160 c72 -37 112 -102 120 -196 5 -65 -17 -136 -56 -178 -25 -29 -86 -57 -137 -64 -158 -21 -284 171 -215 331 23 54 42 76 90 105 47 28 145 29 198 2z" />
+                        <path
+                            d="M5691 1729 c-55 -9 -172 -61 -191 -84 -8 -10 -4 -27 17 -65 15 -29 33 -54 39 -57 6 -2 28 7 49 21 55 38 102 49 186 45 91 -5 129 -28 154 -94 28 -71 23 -75 -106 -75 -255 0 -351 -53 -376 -206 -9 -55 24 -139 73 -184 34 -31 56 -41 119 -55 114 -26 210 -8 275 51 l39 35 3 -38 3 -38 78 -3 77 -3 0 254 c0 230 -2 259 -21 315 -39 115 -134 177 -287 186 -42 3 -101 1 -131 -5z m264 -484 c0 -64 -14 -92 -64 -131 -37 -27 -168 -33 -205 -9 -32 21 -56 64 -56 99 0 33 54 94 88 99 15 2 74 4 132 3 l105 -1 0 -60z" />
+                        <path
+                            d="M3397 1723 c-4 -3 -7 -172 -7 -375 l0 -368 85 0 85 0 0 375 0 375 -78 0 c-43 0 -82 -3 -85 -7z" />
+                        <path
+                            d="M4625 1718 c-3 -7 -4 -175 -3 -373 l3 -360 88 -3 87 -3 -2 373 -3 373 -83 3 c-60 2 -84 -1 -87 -10z" />
+                    </g>
+                </svg>
+            </a>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="home">Home</a>
+            <a href="servizi">Servizi</a>
+            <a href="chi-siamo">Chi Siamo</a>
+            <a href="progetti">Progetti</a>
+            <a href="contatti">Contatti</a>
+        </div>
+        <div class="nav-right">
+            <a href="contatti" class="nav-cta" id="navCta">Lavoriamo insieme →</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="home" class="mobile-link">Home</a>
+            <a href="servizi" class="mobile-link">Servizi</a>
+            <a href="chi-siamo" class="mobile-link">Chi Siamo</a>
+            <a href="progetti" class="mobile-link">Progetti</a>
+            <a href="contatti" class="mobile-link">Contatti</a>
+            <a href="contatti" class="mobile-link mobile-menu-cta">Lavoriamo insieme →</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-shapes">
+            <div class="cube cube-1">
+                <div class="cube-face cube-front"></div>
+                <div class="cube-face cube-back"></div>
+                <div class="cube-face cube-left"></div>
+                <div class="cube-face cube-right"></div>
+                <div class="cube-face cube-top"></div>
+                <div class="cube-face cube-bottom"></div>
+            </div>
+            <div class="cube cube-2">
+                <div class="cube-face cube-front"></div>
+                <div class="cube-face cube-back"></div>
+                <div class="cube-face cube-left"></div>
+                <div class="cube-face cube-right"></div>
+                <div class="cube-face cube-top"></div>
+                <div class="cube-face cube-bottom"></div>
+            </div>
+            <div class="cube cube-3">
+                <div class="cube-face cube-front"></div>
+                <div class="cube-face cube-back"></div>
+                <div class="cube-face cube-left"></div>
+                <div class="cube-face cube-right"></div>
+                <div class="cube-face cube-top"></div>
+                <div class="cube-face cube-bottom"></div>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-tag reveal-up">BENVENUTO · IL TUO PARTNER DIGITALE</div>
+            <h1 class="hero-title reveal-up">
+                SITI WEB<br />
+                <span class="serif-highlight highlight">VELOCI.</span><br />
+                IN UN CLIC.
+            </h1>
+            <p class="hero-desc reveal-up">
+                Niente processi inutili, niente attese infinite. Ti consegno un sito performante,
+                bellissimo e ottimizzato che porta risultati concreti al tuo business.
+            </p>
+            <div class="hero-actions reveal-up">
+                <a href="contatti" class="btn-primary" id="heroCtaBtn">Prenota una Call Gratuita</a>
+                <a href="progetti" class="btn-ghost" id="heroWorkBtn">Guarda il Portfolio →</a>
+            </div>
+            <div class="hero-stats reveal-up">
+                <div class="stat">
+                    <span class="stat-num">10+</span>
+                    <span class="stat-label">Progetti completati</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">+30%</span>
+                    <span class="stat-label">Crescita Media</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label">Trasparenza</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+    <section class="about section-blur" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrap reveal-left">
+                    <div class="about-img-card">
+                        <div class="about-img-overlay"></div>
+                        <div class="about-img-placeholder">
+                            <div class="avatar-ring"></div>
+                            <div class="avatar-inner">
+                                <img src="assets/images/IMG_1176.PNG" alt="Davide"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" />
+                            </div>
+                        </div>
+                        <div class="about-img-badge">
+                            <span>Web Designer</span>
+                            <span>&amp;</span>
+                            <span>Digital Marketer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text reveal-right">
+                    <div class="section-tag">CHI SONO</div>
+                    <h2 class="section-title">COSTRUISCO IDENTITÀ <span class="serif-highlight highlight">AUDACI</span>
+                        E
+                        MARKETING PROGETTATO PER CONVERTIRE.</h2>
+                    <p class="about-body">
+                        Trasformo idee in esperienze digitali straordinarie. Dal primo incontro alla consegna, mi occupo
+                        di ogni dettaglio: design, sviluppo, SEO e campagne pubblicitarie che funzionano davvero.
+                    </p>
+                    <p class="about-body">
+                        Il mio approccio è orientato ai risultati, capisce le persone e trasforma quella comprensione
+                        per far
+                        crescere il tuo business al livello successivo.
+                    </p>
+                    <a href="chi-siamo" class="btn-outline" id="aboutViewBtn">Scopri di più →</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
+    <section class="services section-blur" id="services">
+        <div class="container">
+            <div class="services-header reveal-up">
+                <div class="section-tag">COSA FACCIAMO</div>
+                <h2 class="section-title">SERVIZI PENSATI PER <span class="serif-highlight highlight">ELEVARE</span> IL
+                    TUO BRAND E
+                    ACCELERARE LA CRESCITA.</h2>
+                <a href="servizi" class="btn-outline-small" id="servicesTalkBtn">Vedi tutti i servizi →</a>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal-up" id="serviceCard1">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" />
+                        </svg>
+                    </div>
+                    <h3 class="service-name">Web Design &amp; Sviluppo</h3>
+                    <p class="service-desc">Siti veloci, bellissimi e ottimizzati per convertire visitatori in clienti.
+                    </p>
+                    <div class="service-tags">
+                        <span>UI/UX</span><span>Performance</span><span>CMS</span>
+                    </div>
+                </div>
+
+                <div class="service-card reveal-up" id="serviceCard2">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg>
+                    </div>
+                    <h3 class="service-name">Marketing Digitale</h3>
+                    <p class="service-desc">Strategie su misura per far crescere la tua presenza e aumentare le
+                        conversioni.</p>
+                    <div class="service-tags">
+                        <span>SEO</span><span>Email</span><span>Funnel</span>
+                    </div>
+                </div>
+
+                <div class="service-card reveal-up" id="serviceCard3">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="18" cy="5" r="3" />
+                            <circle cx="6" cy="12" r="3" />
+                            <circle cx="18" cy="19" r="3" />
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                        </svg>
+                    </div>
+                    <h3 class="service-name">Social Media</h3>
+                    <p class="service-desc">Costruiamo una comunità fedele attorno al tuo brand e amplifichiamo la tua
+                        voce.</p>
+                    <div class="service-tags">
+                        <span>Content</span><span>Ads</span><span>Analytics</span>
+                    </div>
+                </div>
+
+                <div class="service-card reveal-up" id="serviceCard4">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3 class="service-name">Paid Media</h3>
+                    <p class="service-desc">Campagne Google &amp; Meta Ads ottimizzate per massimizzare il ROI.</p>
+                    <div class="service-tags">
+                        <span>Google Ads</span><span>Meta Ads</span><span>ROI</span>
+                    </div>
+                </div>
+
+                <div class="service-card reveal-up" id="serviceCard5">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg>
+                    </div>
+                    <h3 class="service-name">SEO &amp; Analytics</h3>
+                    <p class="service-desc">Ottimizzazione per i motori di ricerca e reportistica chiara per decisioni
+                        migliori.</p>
+                    <div class="service-tags">
+                        <span>On-page</span><span>Off-page</span><span>GA4</span>
+                    </div>
+                </div>
+
+                <div class="service-card service-card-cta reveal-up" id="serviceCard6">
+                    <h3 class="service-cta-title">PRONTO A DISTINGUERTI? TRASFORMIAMO LA TUA VISIONE IN <span
+                            class="serif-highlight highlight">REALTÀ.</span></h3>
+                    <a href="contatti" class="btn-primary-sm" id="serviceContactBtn">Lavoriamo insieme →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ EXCELLENCE ═══════════════════════════════ -->
+    <section class="excellence section-blur" id="excellence">
+        <div class="excellence-bg">
+            <div class="exc-glow exc-glow-1"></div>
+            <div class="exc-glow exc-glow-2"></div>
+        </div>
+        <div class="container">
+            <div class="excellence-inner">
+                <div class="excellence-text reveal-left">
+                    <div class="section-tag">PERCHÉ SCEGLIERMI</div>
+                    <h2 class="section-title">L'ECCELLENZA NON È IL MIO OBIETTIVO — È IL MIO <span
+                            class="serif-highlight highlight">STANDARD.</span></h2>
+                    <div class="excellence-features">
+                        <div class="exc-feature">
+                            <div class="exc-dot"></div>
+                            <div>
+                                <strong>Risultati misurabili</strong>
+                                <p>Ogni decisione è guidata dai dati, non dall'intuizione.</p>
+                            </div>
+                        </div>
+                        <div class="exc-feature">
+                            <div class="exc-dot"></div>
+                            <div>
+                                <strong>Comunicazione trasparente</strong>
+                                <p>Sai sempre cosa sta succedendo, in ogni momento.</p>
+                            </div>
+                        </div>
+                        <div class="exc-feature">
+                            <div class="exc-dot"></div>
+                            <div>
+                                <strong>Consegna puntuale</strong>
+                                <p>Rispettiamo le scadenze. Sempre, senza eccezioni.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ PORTFOLIO ═══════════════════════════════ -->
+    <section class="works section-blur" id="works">
+        <div class="container">
+            <div class="works-header reveal-up">
+                <div class="section-tag">PORTFOLIO</div>
+                <h2 class="section-title">OGNI DETTAGLIO RACCONTA UNA<br /><span
+                        class="serif-highlight highlight">STORIA.</span></h2>
+            </div>
+            <div class="works-grid">
+                <div class="work-item work-item-large reveal-up" id="work1">
+                    <div class="work-img"
+                        style="background-image: url('assets/images/real_estate_mockup.png'); background-size: cover; background-position: center 25%;">
+                        <div class="work-img-inner">
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-type">WEB DESIGN · BRANDING</span>
+                        <h4 class="work-title"></h4>
+                    </div>
+                </div>
+                <div class="work-item reveal-up" id="work2">
+                    <div class="work-img"
+                        style="background-image: url('assets/images/ecommerce_mockup.png'); background-size: cover; background-position: center 15%;">
+                        <div class="work-img-inner">
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-type">E-COMMERCE</span>
+                        <h4 class="work-title"></h4>
+                    </div>
+                </div>
+                <div class="work-item reveal-up" id="work3">
+                    <div class="work-img"
+                        style="background-image: url('assets/images/restaurant_ads_mockup.png'); background-size: cover; background-position: center;">
+                        <div class="work-img-inner">
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-type">SOCIAL MEDIA · ADS</span>
+                        <h4 class="work-title"></h4>
+                    </div>
+                </div>
+                <div class="work-item reveal-up" id="work4">
+                    <div class="work-img"
+                        style="background-image: url('assets/images/dentist_seo_mockup.png'); background-size: cover; background-position: center;">
+                        <div class="work-img-inner">
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-type">SEO · MARKETING</span>
+                        <h4 class="work-title"></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ TESTIMONIALS SLIDER ═══════════════════════════════ -->
+    <section class="testimonials section-blur" id="testimonials">
+        <div class="testi-slider-bg" id="testiSliderBg"></div>
+        <div class="container">
+            <div class="testi-header reveal-up">
+                <div class="section-tag">COSA DICONO</div>
+                <div class="testi-nav">
+                    <button class="testi-btn" id="testiPrev" aria-label="precedente">←</button>
+                    <button class="testi-btn" id="testiNext" aria-label="successivo">→</button>
+                </div>
+            </div>
+
+            <!-- Slider Track -->
+            <div class="testi-track-wrap reveal-up">
+                <div class="testi-track" id="testiTrack">
+
+                    <!-- Slide 1 -->
+                    <div class="testi-slide" data-color="#b026ff" data-color2="#ff26b0">
+                        <div class="slide-quote-mark">&ldquo;</div>
+                        <blockquote class="slide-quote">"Dal primo incontro era chiaro che aveva compreso appieno le
+                            nostre esigenze, sia tecnicamente che dal punto di vista degli utenti. I risultati superano
+                            ogni aspettativa."</blockquote>
+                        <div class="slide-author">
+                            <div class="slide-avatar"><span style="background: #b026ff">A.V.</span></div>
+                            <div class="slide-info">
+
+                            </div>
+                            <div class="slide-stars">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="testi-slide" data-color="#7b2fff" data-color2="#26b0ff">
+                        <div class="slide-quote-mark">&ldquo;</div>
+                        <blockquote class="slide-quote">"Il sito ha incrementato sensibilmente le nostre richieste di preventivo, migliorando la qualità dei lead acquisiti. Comunicazione impeccabile e risultati concreti."
+                        </blockquote>
+                        <div class="slide-author">
+                            <div class="slide-avatar"><span style="background: #7b2fff">M.B.</span></div>
+                            <div class="slide-info">
+
+                            </div>
+                            <div class="slide-stars">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="testi-slide" data-color="#ff26b0" data-color2="#ff6b26">
+                        <div class="slide-quote-mark">&ldquo;</div>
+                        <blockquote class="slide-quote">"Professionale, veloce e con un occhio estetico unico. In pochi
+                            mesi le vendite online sono cresciute del 25% con una strategia mirata. Consiglio assolutamente."</blockquote>
+                        <div class="slide-author">
+                            <div class="slide-avatar"><span style="background: #ff26b0">G.R.</span></div>
+                            <div class="slide-info">
+
+                            </div>
+                            <div class="slide-stars">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="testi-slide" data-color="#26b0ff" data-color2="#7b2fff">
+                        <div class="slide-quote-mark">&ldquo;</div>
+                        <blockquote class="slide-quote">"Le campagne Google Ads hanno abbassato il costo per
+                            acquisizione del 20% grazie ad un'ottimizzazione continua. Ottimo investimento."
+                        </blockquote>
+                        <div class="slide-author">
+                            <div class="slide-avatar"><span style="background: #26b0ff">L.M.</span></div>
+                            <div class="slide-info">
+
+                            </div>
+                            <div class="slide-stars">★★★★★</div>
+                        </div>
+                    </div>
+
+                </div><!-- /.testi-track -->
+            </div><!-- /.testi-track-wrap -->
+
+            <!-- Dots -->
+            <div class="testi-dots" id="testiDots">
+                <button class="testi-dot active" data-index="0"></button>
+                <button class="testi-dot" data-index="1"></button>
+                <button class="testi-dot" data-index="2"></button>
+                <button class="testi-dot" data-index="3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ CTA ═══════════════════════════════ -->
+    <!-- ═══════════════════════════════ CTA ═══════════════════════════════ -->
+    <section class="cta-section section-blur" id="contact">
+
+        <!-- Floating avatar circles with pulse rings -->
+        <div class="float-avatars" aria-hidden="true">
+            <!-- Top-left -->
+            <div class="float-av float-av-1">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring delay1"></div>
+                <div class="av-circle"><img src="assets/images/avatar_1.png" alt="Alessandro Villa" /></div>
+            </div>
+            <!-- Mid-left -->
+            <div class="float-av float-av-2">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring delay1"></div>
+                <div class="av-circle"><img src="assets/images/avatar_2.png" alt="Lorenzo Martini" /></div>
+            </div>
+            <!-- Bottom-left (partial) -->
+            <div class="float-av float-av-3">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring delay1"></div>
+                <div class="av-circle"><img src="assets/images/avatar_3.png" alt="Giulia Romano" /></div>
+            </div>
+            <!-- Top-right -->
+            <div class="float-av float-av-4">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring delay1"></div>
+                <div class="av-circle"><img src="assets/images/avatar_4.png" alt="Marco Bianchi" /></div>
+            </div>
+            <!-- Mid-right -->
+            <div class="float-av float-av-5">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring delay1"></div>
+                <div class="av-circle"><img src="assets/images/avatar_5.png" alt="Cliente soddisfatto" /></div>
+            </div>
+            <!-- Bottom-right (partial) -->
+            <div class="float-av float-av-6">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring delay1"></div>
+                <div class="av-circle"><img src="assets/images/avatar_6.png" alt="Cliente soddisfatta" /></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="cta-inner reveal-up">
+                <div class="section-tag">INIZIAMO INSIEME</div>
+                <h2 class="cta-title">UN SITO CHE INCANTA. <span class="serif-highlight highlight">UN MARKETING CHE
+                        CONVERTE.</span>
+                </h2>
+                <p class="cta-desc">Il tuo brand merita più di un sito mediocre. Parliamo di come possiamo portarlo al
+                    livello successivo.</p>
+                <div class="cta-form-wrapper">
+                    <form action="https://formsubmit.co/info@bdigitalstudio.it" method="POST" class="cta-form"
+                        id="contactForm">
+                        <!-- Redirige l'utente dopo l'invio (Fallback) -->
+                        <input type="hidden" name="_next"
+                            value="https://belpietrodavide01-beep.github.io/sito-web-personale/">
+                        <!-- Disabilita la pagina intermedia del CAPTCHA per uno scorrimento più fluido -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Nuovo lead dal sito web!">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nome completo</label>
+                                <input type="text" id="name" name="name" placeholder="Es. Mario Rossi" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Es. mario@brand.it" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Di cosa hai bisogno?</label>
+                            <textarea id="message" name="message" placeholder="Raccontami del tuo progetto..." rows="4"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-large btn-submit" id="contactSubmitBtn">Invia
+                            Richiesta</button>
+                    </form>
+
+                    <!-- Messaggio di Successo (Nascosto di default) -->
+                    <div id="contactSuccess" class="cta-success-message" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3>Messaggio Inviato!</h3>
+                        <p>Grazie per avermi contattato. Ti risponderò il prima possibile, solitamente entro 24 ore.</p>
+                        <button class="btn-outline-sm" onclick="location.reload()">Invia un altro messaggio</button>
+                    </div>
+                </div>
+                <div class="cta-clients">
+                    <div class="client-avatars">
+                        <div class="client-avatar ca1"></div>
+                        <div class="client-avatar ca2"></div>
+                        <div class="client-avatar ca3"></div>
+                        <div class="client-avatar ca4"></div>
+                    </div>
+                    <span>10+ clienti soddisfatti già a bordo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ FAQ ═══════════════════════════════ -->
+    <section class="faq-section section-blur" id="faq">
+        <div class="container">
+            <div class="faq-header reveal-up">
+                <div class="section-tag">DOMANDE FREQUENTI</div>
+                <h2 class="section-title">TUTTO QUELLO CHE <span class="serif-highlight highlight">VUOI
+                        SAPERE</span><br>PRIMA DI INIZIARE.</h2>
+                <p class="faq-intro">Risposte chiare alle domande più comuni. Se hai ancora dubbi, scrivimi
+                    direttamente.</p>
+            </div>
+
+            <div class="faq-list reveal-up" id="faqList">
+
+                <div class="faq-item" id="faqItem1">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqAnswer1" id="faqBtn1">
+                        <span>Quanto costa realizzare un sito web?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer1" role="region" aria-labelledby="faqBtn1">
+                        <p>Il prezzo dipende dalla complessità del progetto. Un sito vetrina professionale parte da
+                            circa <strong>500–900€</strong>, mentre soluzioni più articolate (e-commerce, funnel di
+                            marketing, animazioni custom) possono variare tra i <strong>1.000€ e i 3.000€+</strong>.
+                            Dopo una breve call gratuita, ti fornirò un preventivo su misura senza impegno.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faqItem2">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqAnswer2" id="faqBtn2">
+                        <span>Quanto tempo ci vuole per avere il sito online?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer2" role="region" aria-labelledby="faqBtn2">
+                        <p>I tempi medi di consegna sono di <strong>7–14 giorni lavorativi</strong> per un sito vetrina
+                            completo. Per progetti più complessi (e-commerce, integrazioni avanzate) il processo dura
+                            tipicamente 3–6 settimane. Lavoriamo in modo trasparente: ricevi aggiornamenti regolari
+                            sull'avanzamento e hai voce in capitolo in ogni fase.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faqItem3">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqAnswer3" id="faqBtn3">
+                        <span>Avrò bisogno di competenze tecniche per gestire il sito?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer3" role="region" aria-labelledby="faqBtn3">
+                        <p>Assolutamente no. I siti che realizzo integrano pannelli di gestione intuitivi (come CMS su
+                            misura o WordPress) che ti permettono di aggiornare testi, immagini e contenuti <strong>in
+                                totale autonomia</strong>, anche senza esperienza tecnica. Ti fornisco anche una breve
+                            guida video personalizzata a fine progetto.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faqItem4">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqAnswer4" id="faqBtn4">
+                        <span>Il sito sarà visibile su Google?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer4" role="region" aria-labelledby="faqBtn4">
+                        <p>Sì. Ogni sito che realizzo include una <strong>ottimizzazione SEO on-page di base</strong>:
+                            struttura corretta dei titoli, meta tag, velocità di caricamento, sitemap e schema markup.
+                            Per risultati più ambiziosi offro anche pacchetti SEO avanzati (link building, content
+                            strategy, SEO locale) che posizionano il tuo sito in cima ai risultati di ricerca.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faqItem5">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqAnswer5" id="faqBtn5">
+                        <span>Cosa succede dopo la consegna del sito? C'è assistenza?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer5" role="region" aria-labelledby="faqBtn5">
+                        <p>Ogni progetto include <strong>30 giorni di assistenza gratuita</strong> per correzioni e
+                            piccole modifiche post-lancio. Dopodichè è possibile attivare un piano di manutenzione
+                            mensile che copre aggiornamenti, backup automatici, monitoraggio delle performance e
+                            supporto prioritario. Non ti lascio mai solo.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faqItem6">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqAnswer6" id="faqBtn6">
+                        <span>Posso avere anche le campagne pubblicitarie gestite da te?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer6" role="region" aria-labelledby="faqBtn6">
+                        <p>Sì, è uno dei miei servizi principali. Gestisco campagne <strong>Google Ads e Meta
+                                Ads</strong> (Facebook & Instagram) dalla strategia alla creazione dei creativi, fino
+                            all'ottimizzazione continua. Il mio obiettivo è sempre lo stesso: massimizzare il ritorno
+                            sull'investimento abbassando il costo per acquisizione cliente.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faqItem7">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqAnswer7" id="faqBtn7">
+                        <span>Come si avvia la collaborazione?</span>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer7" role="region" aria-labelledby="faqBtn7">
+                        <p>È semplicissimo: <strong>compila il modulo qui sopra</strong> o scrivimi direttamente via
+                            email. Ti rispondo entro 24 ore per fissare una call gratuita di 30 minuti in cui capisco le
+                            tue esigenze, ti propongo la soluzione migliore e ti invio un preventivo dettagliato. Nessun
+                            impegno, nessun costo nascosto.</p>
+                    </div>
+                </div>
+
+            </div><!-- /.faq-list -->
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand-col">
+                    <div class="footer-contact">
+                        <div class="footer-contact-label">CONTATTO GENERALE</div>
+                        <a href="mailto:info@bdigitalstudio.it">info@bdigitalstudio.it</a>
+                    </div>
+                    <div class="footer-contact">
+                        <div class="footer-contact-label">INDIRIZZO</div>
+                        <span>Brescia, Italia | Disponibile da remoto</span>
+                    </div>
+                    <div class="footer-social">
+                        <div class="footer-contact-label">SEGUIMI</div>
+                        <div class="social-links">
+                            <a href="#" id="footerIg">IG</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <div class="footer-nav-label">LINKS RAPIDI</div>
+                    <nav class="footer-nav">
+                        <a href="#hero">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Servizi</a>
+                        <a href="#works">Portfolio</a>
+                        <a href="#testimonials">Recensioni</a>
+                        <a href="#contact">Contatti</a>
+                    </nav>
+                </div>
+
+                <div class="footer-col">
+                    <div class="footer-nav-label">SERVIZI</div>
+                    <nav class="footer-nav">
+                        <a href="#services">Web Design</a>
+                        <a href="#services">E-Commerce</a>
+                        <a href="#services">SEO</a>
+                        <a href="#services">Social Media</a>
+                        <a href="#services">Google Ads</a>
+                        <a href="#services">Meta Ads</a>
+                        <a href="#services">Brand Identity</a>
+                    </nav>
+                </div>
+
+                <div class="footer-col footer-newsletter-col">
+                    <div class="footer-nav-label">UNISCITI ALLA NEWSLETTER</div>
+                    <p class="newsletter-desc">Insights su web design e marketing ogni settimana.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="tua@email.com" id="emailInput" required />
+                        <button type="submit" id="subscribeBtn">ISCRIVITI</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    bdigital 2026 © tutti i diritti riservati
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════ WHATSAPP STICKY BUTTON ═══════════════════════════════ -->
+    <a href="https://wa.me/393272506011" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Contattaci su WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"><!--!Font Awesome Free 6.x.x by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.7 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+    </a>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
